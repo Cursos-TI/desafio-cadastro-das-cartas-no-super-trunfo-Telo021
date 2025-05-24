@@ -18,6 +18,12 @@ int main() {
     float pib2;
     int turistico2;
 
+    float densidade1, densidade2;
+    float pibper1, pibper2;
+
+
+
+
     //Cidade 1
     printf("Estado (ex: De A a H): ");
     scanf(" %c", &Estado1);
@@ -35,7 +41,7 @@ int main() {
     scanf("%d", &turistico1);
 
     //Cidade 2
-    printf("\n===Carta 2===\n\nEstado (ex: De A a H): ");
+    printf("\nCarta 2\n\nEstado (ex: De A a H): ");
     scanf(" %c", &Estado2);
     printf("Código da Carta: A letra do estado seguida de um número de 01 a 04 (ex: A01, B03): ");
     scanf("%s", &codigo2);
@@ -49,6 +55,14 @@ int main() {
     scanf("%f", &pib2);
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &turistico2);
+    
+        //Calculo da Densidade
+    densidade1 = (float)(populacao1 / km1);
+    densidade2 = (float)(populacao2 / km2);
+
+    //Calculo do Pib per Capita
+    pibper1 = (float)(pib1* 1000000000) / populacao1;     // Multiplicar para 1 Bilhão para  funcionar nas casas Decimais
+    pibper2 = (float)(pib2* 1000000000) / populacao2;
 
 
     //Exibição da Carta 1
@@ -59,9 +73,11 @@ int main() {
     printf("Código: %s \n",codigo1);
     printf("Nome da Cidade: %s \n",cidade1);
     printf("População: %d \n",populacao1);
-    printf("Área %.2f km²\n",km1);             // %.2f para 2 cassas decimais
+    printf("Área: %.2f km²\n",km1);             // %.2f para 2 cassas decimais
     printf("PIB: %.2f Bilhoes de Reais\n",pib1);
     printf("Pontos Turísticos: %d \n",turistico1);
+    printf("Densidade Populacional: %.2f \n", densidade1);
+    printf("PIB per Capita: %.2f \n", pibper1);
 
     //Exibição da Carta 2
 
@@ -74,7 +90,8 @@ int main() {
     printf("Área %.2f km²\n",km2);            // %.2f para 2 cassas decimais
     printf("PIB: %.2f Bilhoes de Reais\n",pib2);
     printf("Pontos Turísticos: %d \n",turistico2);
-
+    printf("Densidade Populacional: %.2f \n", densidade2);
+    printf("PIB per Capita: %.2f \n", pibper2);
 
 
 
